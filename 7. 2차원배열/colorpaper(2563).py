@@ -10,13 +10,19 @@ for i in range(N):
 
 matrix.sort()
 i = 0
+x1, x2 = matrix[0][0], matrix[0][0] + 10
+y1, y2 = matrix[0][1], matrix[0][1] + 10
 
 while(i<=N):
     for j in range(i, N):
         if i == j:
             continue
-        if matrix[i][0] <= matrix[j][0] and (matrix[i][0] + 10) >= matrix[j][0]:
-            result += (100 - (10 - (matrix[j][0] - matrix[i][0])) * (10 - abs((matrix[j][1] - matrix[i][1]))))
+        if x1 <= matrix[j][0] and (x1 + 10) >= matrix[j][0]:
+            result += (100 - ((x2 + x1) - (matrix[j][0] - x1)) * ((y2 + y1) - abs((matrix[j][1] - y1))))
+            x1 = matrix[j][0] - x1
+            x2 = x1 + 10
+            y1 = abs((matrix[j][1] - y1))
+            y2 = y1 + 10
             i += 1
         else:
             result += 100
