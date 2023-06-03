@@ -11,8 +11,13 @@ while True:
     value = 0
     for i in range(len(temp)):
         value += temp[i]
-    print(value, temp)
+
     if value == n:
-        print('perfect')
+        print(n, '=',end=' ')
+        for i in range(len(temp)):
+            if temp[i] != temp[-1]:
+                print(temp[i],'+', end=' ')
+            else:
+                print(temp[i])
     else:
-        print('not perfect')
+        print(n, 'is NOT perfect.')
