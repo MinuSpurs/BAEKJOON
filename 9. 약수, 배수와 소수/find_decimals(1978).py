@@ -8,10 +8,11 @@ demical = []
 for i in range(N):
     if array[i] == 1:
         continue
-    for j in range(1, array[i]):
+    demical.append(array[i])
+    for j in range(2, array[i]):
         if array[i] % j == 0:
-            demical.append(array[i])
-        else:
+            demical.remove(array[i])
             break
+    
 
-print(demical)
+print(len(demical))
