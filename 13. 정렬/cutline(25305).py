@@ -11,5 +11,4 @@ for i in range(N-1, 0, -1):
             score[j] = score[j+1]
             score[j+1] = temp
 
-print(score)
 print(score[k-1])
