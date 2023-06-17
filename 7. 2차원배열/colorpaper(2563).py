@@ -1,32 +1,21 @@
-import sys
+paper = [[0] * 100 for _ in range(100)]  # 100x100 크기의 흰색 도화지 배열 초기화
 
-N = int(input())
+print(paper)
+"""
+n = int(input())  # 색종이의 수
 
-matrix = []
-result = 100
+for _ in range(n):
+    x, y = map(int, input().split())
+    for i in range(x, x+10):
+        for j in range(y, y+10):
+            paper[i][j] = 1  # 검은색 색종이가 있는 부분을 1로 설정
 
-for i in range(N):
-    matrix.append(list(map(int, sys.stdin.readline().split())))
+area = 0  # 검은 영역의 넓이
 
-matrix.sort()
-i = 0
-x1, x2 = matrix[0][0], matrix[0][0] + 10
-y1, y2 = matrix[0][1], matrix[0][1] + 10
+for i in range(100):
+    for j in range(100):
+        if paper[i][j] == 1:
+            area += 1  # 1로 설정된 영역을 세어 넓이를 증가시킴
 
-while(i<=N):
-    for j in range(i, N):
-        if i == j:
-            continue
-        if x1 <= matrix[j][0] and (x1 + 10) >= matrix[j][0]:
-            result += (100 - ((x2 + x1) - (matrix[j][0] - x1)) * ((y2 + y1) - abs((matrix[j][1] - y1))))
-            x1 = matrix[j][0] - x1
-            x2 = x1 + 10
-            y1 = abs((matrix[j][1] - y1))
-            y2 = y1 + 10
-            i += 1
-        else:
-            result += 100
-            i += 1
-    i += 1
-
-print(result)
+print(area)
+"""
