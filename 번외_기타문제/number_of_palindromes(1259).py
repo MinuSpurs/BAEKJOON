@@ -1,7 +1,6 @@
 import sys
 
 while True:
-    mark = 0
     word = sys.stdin.readline().rstrip()
     if word == '0':
         break
