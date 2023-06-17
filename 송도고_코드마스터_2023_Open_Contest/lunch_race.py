@@ -1,7 +1,7 @@
 n, m, k = map(int, input().split())
 
 distances = [0] * k  
-winning_class = 1 
+winning_class = 0
 
 for i in range(k):
     f, d = map(int, input().split())
