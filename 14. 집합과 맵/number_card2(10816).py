@@ -6,13 +6,19 @@ my_card = tuple(map(int, sys.stdin.readline().split()))
 M = int(input())
 card_list = tuple(map(int, sys.stdin.readline().split()))
 
-dict = {}
+card_dict = {}
+result = [0] * M
+
+for i in my_card:
+    if i in card_dict.keys():
+        card_dict[i] += 1
+    else:
+        card_dict[i] = 1
 
 for i in range(len(card_list)):
-    dict[card_list[i]] = 0
+    if card_list[i] in card_dict.keys():
+        result[i] = card_dict[card_list[i]]
+    else:
+        result[i] = 0
 
-for i in range (len(my_card)):
-    if my_card[i] in dict.keys():
-        dict[my_card[i]] += 1
-
-print(* dict.values())
+print(* result)
