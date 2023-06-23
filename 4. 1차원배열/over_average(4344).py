@@ -1,3 +1,10 @@
+def avg_round(value):
+    avg = int(value * 10000)
+    if avg % 10 >= 5:
+        avg += 10
+    result = (avg // 10) / 1000
+    return result
+
 C = int(input())
 test,avg = [],[]
 
@@ -14,4 +21,5 @@ for i in range(C):
     for j in range(1,len(test[i])):
         if test[i][j] > avg[i]:
             count+=1
-    print(f'{count/test[i][0]*100:.3f}%')
+
+    print(f'{avg_round(count/test[i][0]*100):.3f}%')
