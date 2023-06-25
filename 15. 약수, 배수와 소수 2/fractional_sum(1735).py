@@ -8,12 +8,10 @@ while b > 0:
 up = ((A * D) // a) + ((C * B) // a)
 down = (B * D) // a
 
-print(up, down)
 a, b = up, down
 while b > 0:
     a, b = b, a%b
 
-print(a)
 
 if a != 1:
     up /= a

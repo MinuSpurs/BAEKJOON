@@ -1,3 +1,5 @@
+#Euclidean algorithm
+
 A, B = map(int, input().split())
 a, b = A, B
 
