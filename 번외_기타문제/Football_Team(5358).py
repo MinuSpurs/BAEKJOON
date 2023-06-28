@@ -1,7 +1,9 @@
 while True:
-    name = input()
-    if not name:
+    try:
+        name = input()
+    except EOFError:
         break
+
     result = ""
     for ch in name:
         if ch == 'i':
