@@ -16,5 +16,4 @@ while i <= n:
         i += 1
 cnt += len(name_dict)
 
-print(cnt) 
-    
+print(cnt)
