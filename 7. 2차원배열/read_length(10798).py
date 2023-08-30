@@ -4,7 +4,10 @@ matrix = []
 for i in range(5):
     matrix.append(list(sys.stdin.readline().rstrip()))
 
-for i in range(5):
+print(matrix[0])
+print(len(matrix[0]))
+
+'''for i in range(5):
     if len(matrix[i]) < 15:
         for j in range(15 - len(matrix[i])):
             matrix[i].append('.')
@@ -14,4 +17,4 @@ for i in range(15):
         if matrix[j][i] == '.':
                 continue
         for k in range(len(matrix[j][i])):          
-            print(matrix[j][i][k], end='')
+            print(matrix[j][i][k], end='')'''
