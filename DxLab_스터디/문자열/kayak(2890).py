@@ -13,8 +13,6 @@ for i in range(r):
 
 sorted_keys = sorted(dic, key=dic.get, reverse=True)
 
-print(sorted_keys)
-
 rank = 1
 prev_value = dic[sorted_keys[0]]
 ranking = {}
