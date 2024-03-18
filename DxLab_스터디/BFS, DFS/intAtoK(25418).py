@@ -1,12 +1,19 @@
-A, K = map(int, input().split())
+from collections import deque
 
-count = 0
-while A < K:
-    if K % 2 == 0:
-        K //= 2
-    else:
-        K -= 1
-    count += 1
+def min_operations(a, k):
+    visited = set()
+    queue = deque([(a, 0)])
+    while queue:
+        current, count = queue.popleft()
+        if current == k:
+            return count
+        operation = [current+1, current*2]
+        for next in operation:
+            if next <= k and next not in visited:
+                visited.add(next)
+                queue.append((next, count+1))
+    return -1
 
-count += A - K
-print(count)
+
+a, k = map(int, input().split())
+print(min_operations(a, k))
